@@ -1,0 +1,15 @@
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: ""
+
+addons:
+  coverity_scan:
+    project:
+      name: "wudigithub1/zlib-1.2.8"
+      description: "Build submitted via Travis CI"
+    notification_email: zhuceyonghu_2013@163.com
+    build_command_prepend: " "
+    build_command:   "devenv /contrib/vstudio/vc10/zlibvc.sln /REBUILD debug"
+    branch_pattern: coverity_scan
